@@ -1,38 +1,31 @@
-algoritmo "semnome"
+algoritmo "PartidaFutebol"
 var
-   nota1, nota2, media:Real
-
+   gols1, gols2, dif: Real
 inicio
       EscrevaL("-----------------------")
-      EscrevaL(" ESCOLA DO LUCAS ")
+      EscrevaL("   BANGU x MADUREIRA   ")
       EscrevaL("-----------------------")
-      escreva ("Digite a primeira nota: ")
-      leia (nota1)
-      escreva("Digite a segunda nota: ")
-      leia(nota2)
-      media <- (nota1+nota2)/2
-      
-se (media >=9) e (media<=10)entao
-   escreval ("Aproveiamento A")
-senao
-     se (media>=8) e (media<9) entao
-        escreval ("Aproveitamento B")
-     senao
-          se (media>=7) e (media<8) entao
-             escreval ("Aproveitamento C")
-          senao
-               se (media>=6) e (media<7) entao
-                  escreval ("Aproveiamento D")
-               senao
-                    se (media>=5) e (media<6) entao
-                       escreval ("Aproveitamento F")
-                    senao
-                         escreval ("aproveitamento f")
-                     fimse
-               fimse
-          fimse
-     fimse
-fimse
-EscrevaL("-----------------------")
+      Escreva("Quantos gols do BANGU? ")
+      Leia(gols1)
+      Escreva("Quantos gols do MADUREIRA? ")
+      Leia(gols2)
+      Se (gols1 > gols2) entao
+         dif <- gols1 - gols2
+      senao
+         dif <- gols2 - gols1
+      FimSe
+      EscrevaL("-----------------------")
+      EscrevaL(" DIFERENCA: ", dif)
+      Escolha dif
+         Caso 0
+              EscrevaL(" STATUS: EMPATE ")
+         Caso 1, 2, 3
+              EscrevaL(" STATUS: PARTIDA NORMAL ")
+         Caso 4,5, 6, 7
+              EscrevaL(" STATUS: GOLEADA ")
+         OutroCaso
+              EscrevaL(" STATUS: ALGO INCOMUM. ")
+              EscrevaL(" Voce digitou os dados corretos? ")
+      FimEscolha
+      EscrevaL("-----------------------")
 fimalgoritmo
-
